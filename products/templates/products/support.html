@@ -1,0 +1,130 @@
+
+ 
+    
+    {% extends 'products/base.html' %}
+    {% load thumbnail %}
+    
+    
+    
+    
+    {% load crispy_forms_tags %}
+    
+    
+    
+    
+    {% block content %}
+    
+    <h5 class="text-center"><span class="text-muted"></h5></span>
+      
+    <div class="blog">
+    
+      <H6 STYLE="font-family: 'avenir next rounded std'">
+     <div class="container">
+      
+   
+  
+<h1>Поддержка и сопровождение на любом этапе</h1>
+
+   
+     <br>
+      <div class="row">
+
+
+        <h3><p class="text-left" > Мы понимаем, что очень сложно найти тот вариант для себя, который понравится большего всего. Обладая 25-летнем опытом и самым широким спектром технических возможностей, мы готовы вместе с вами найти то единственное решение, которое подходит именно вам. А после того, как мы с вами 
+          создадим то, что будет вас радовать, мы внесем изображение изделия в нужный раздел калькулятора. И в следующий раз вам будем очень удобно рассчитать требуемый тираж и понять сроки изготовления. А возможно, получиться посмотреть на другие идеи и реализации и мгновенно прикинуть их стоимость. У нас вместе получится воспользоваться копилкой полиграфических решений.Просто свяжитесь с нами.</p>
+          <br> <br> <br>
+      
+<p style="color:rgb(36, 163, 60)" class="text-center" class="text-muted"> <a style="color:rgb(36, 163, 60)"href="mailto:info@005.ru"><i class="fa fa-envelope" aria-hidden="true"></i>info@005.ru </a> 
+
+  <a href="/">
+ 
+      <img src="/media/products/logo_rose.png" width="97" height="65">
+ 
+  </a>
+
+<i class="fa fa-phone"></i>      +7(495) 740-38-93</p></h6></span>  
+        <!-- <div class="card"> -->
+         <!-- <div class="card-img">
+          <img align="center" src="images/posts/polit.jpg" class="img-fluid">
+         </div> -->
+    
+        {% for product in filter.qs %}
+      
+      <!-- <div class="tile__body list-default__parent"> -->
+    
+    
+        <div class="col-md-3 col-lg-3 col-sm-6">
+        
+    
+            <div class="card">
+             <div class="card-img">
+              <!-- <img align="center" src="{{ product.mainimage.url }}" class="img-fluid"> -->
+              <!-- <img align="center" src="media/{{ product.mainimage }}" class="img-fluid"> -->
+              <!-- { % thumbnail 'product.mainimage' "50" as im % } -->
+              
+                  {% thumbnail product.mainimage "300" as im %}
+                    <img align="center" src="{{ im.url }}" alt="not found" class="img-fluid">
+                    <!-- { % empty % }
+                    <p>No image</p> -->
+                {% endthumbnail %}
+             </div>
+    
+            <div class="card-body">
+            <H6 STYLE="font-family: 'Courier New'"></H6>
+             <h6 class="card-title"><a href="products_by_category/{{ product.id }}"><p style="color:rgb(36, 163, 60)">{{ product.name }}></p></a></h6>
+     {{ product.preview_text}} 
+      
+      
+             <p class="card-text">
+    
+              
+              </p>
+             </div>
+    
+            </div>
+    
+    
+      
+      </div>
+           
+        
+              
+            {% endfor %}
+    
+       </div>
+      </div>
+     </div>
+    </div>
+    </div>
+    </div>
+    
+      
+    
+    
+      <div>
+        <h6 class="text-center"></h6> 
+        
+        </div>
+    <br>
+    <br>
+    <br>
+    
+    <div 
+    
+
+    
+              </div>
+    
+    {% endblock %}
+    
+    
+    
+    
+    
+    <body>
+    
+      <video controls loop>
+        <source src="media/box_production1.mp4" type="video/mp4">
+       
+        Your browser does not support the video tag.
+      </video>

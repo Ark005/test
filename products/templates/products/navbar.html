@@ -1,0 +1,140 @@
+
+{% load cart_tag %}
+{% load static %} 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+
+    
+ 
+
+
+    <!--
+    
+    <strong> поиск продукта
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+        <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+        <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+      </svg>  
+    </strong>
+    -->
+  <!--
+      <span class="align-middle"> <a href="/">
+
+         <img src="/media/products/logo_rose.png" width="90" height="60">
+      
+      </a></span> -->
+   
+ 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+     
+      <li {% if request.path == 'contact' %}class="nav-item active"{% else %}class="nav-item"{% endif %}>
+        <a class="nav-link active" href="/about.html/"><strong>о нас</strong> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/"></a>
+      </li>
+<!-- 
+      <li class="nav-item">
+        <a class="nav-link" href="/technologies.html/">технологии</a>
+      </li>-->
+      <li class="nav-item">
+       <!--  <a class="nav-link" href="/layout.html">дизайн</a>-->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/requirements.html/"><i class="fas fa-file"></i> требования к файлам</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/"></a>
+      </li>
+      <li class="nav-item">
+       <!-- <a class="nav-link" href="/photo.html/">фотосъемка</a>-->
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link active" href="/delivery.html/"><i class="fas fa-truck"></i> доставка </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/"></a>
+      </li>
+      <li 
+     <a class="nav-link active"
+      <a class="nav-link active" 
+    </li></a>
+    <li class="nav-item">
+      <a class="nav-link" href="/"></a>
+    </li>
+    <li 
+    <a class="nav-link active"
+     <a class="nav-link active" 
+   </li></a>
+   <li class="nav-item">
+     <a class="nav-link" href="/"></a>
+   </li>
+   <li 
+   <a class="nav-link active"
+    <a class="nav-link active" 
+  </li></a>
+  <li class="nav-item">
+    <a class="nav-link" href="/"></a>
+  </li>
+  <li 
+  <a class="nav-link active"
+   <a class="nav-link active" 
+ </li></a>
+ <li class="nav-item">
+   <a class="nav-link" href="/"></a>
+ </li>
+
+
+
+<li 
+<a class="nav-link active"
+<a class="nav-link active" 
+</li></a>
+<li class="nav-item">
+<a class="nav-link" href="/"></a>
+</li>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'mainapp:cart-home' %}">
+          <i class="fa fa-shopping-cart"></i> <strong>Корзина  </strong> 
+          <span class="badge badge-light">{{ request.user| cart_total }}</span>
+        </a>
+      </li>
+       <li class="nav-item">
+        
+      </li>
+   
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-tie"></i> {{ request.user.username }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <!--<a class="dropdown-item" href="#">Панель</a>-->
+          <a class="dropdown-item" href="{% url 'checkout:oderView' %}"><strong> Заказы</strong> </a>
+          <a class="dropdown-item" href="/register.html">регистрация</a>
+          
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/accounts/logout/">выход из системы</a>
+        </div>
+        
+       
+      
+      </li>
+      {% else %}
+       <li class="nav-item">
+ <!-- <a  class="btn btn-success" href="/accounts/login/">Логин / Регистрация</a> -->
+        <a  class="btn btn-success" href="https://www.005.ru/register.html/">Логин / Регистрация</a>
+      </li>
+      {% endif %}
+     
+    </ul>
+  </div>
+  </div>
+  
+</nav>
+

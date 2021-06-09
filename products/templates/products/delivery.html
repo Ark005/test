@@ -1,0 +1,108 @@
+{% extends 'products/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+<h5 class="text-center"><br><br><br><h4>Стоимость доставки расчитывается отдельно и составляет от 400 рублей за груз до 5 кг (<i class="fas fa-walking"></i>) 
+   и от 1500 рублей (<i class="fas fa-truck"></i>)за груз от 5 килограмм в зависимости от веса и расстояния и времени суток по г. Москве. Доставка в другие города рассчитывается согласно тарифам транспортной компании конкретного региона.
+
+</h4>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ </head>
+ <body> 
+  <br><br><br>
+ <center>
+  <button class="btn btn-success float-center" id="fa" name="button" value="True" onclick="myFunction()">Куда везём?</button>
+  </center>  
+ </body> 
+
+
+
+      {% if request.user.is_authenticated %}
+
+
+
+
+
+
+      
+   
+
+                <!--      <input type="checkbox" name="option1" id="option1" value="True" checked> Подтвердить
+                           <button class="btn btn-success float-right" id="fa" name="button" value="True" onclick="myFunction()">Подтвердить заказ</button> -->
+                           </form>
+                           <p id="demo"></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            function myFunction() {
+              window.location.href = "/checkout/";
+            }
+         </script>
+      </div>
+
+      
+      <br><br><br>
+      
+      <div class="card mb-5" style="height: auto">
+         <div class="card-body">
+     </script>
+
+
+
+     
+      {% else %}
+      
+      <h6 class="card-title"><span class="text-muted"><p style="color:rgb(229, 152, 147)">пожалуйста, зарегистрируйтесь,чтобы  мы понимали,кому доставлять заказ</p></span></a></h6>
+      
+      {% endif %}
+
+     
+
+
+
+
+
+     
+            
+         </div>
+
+     <br> 
+   
+            
+      
+   </div>
+
+
+
+
+
+
+ 
+
+
+   
+
+ 
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+{% endblock %}

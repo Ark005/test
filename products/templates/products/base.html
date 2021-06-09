@@ -1,0 +1,135 @@
+
+
+{% load static %}
+{% load thumbnail %}
+{% block style %}
+
+
+
+<link rel="shortcut icon" href="/media/products/favicon.ico" type="image/x-icon»>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  <style>
+  	.card{
+  		    height: 300px;
+  	}
+  	.card-product:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden; }
+  .card-product .price-new, .card-product .price {
+    margin-right: 5px; }
+  .card-product .price-old {
+    color: #999; }
+  .card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center; }
+    <span class="border-0"></span>  
+    
+      
+      .card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee; }
+  .card-product .action-wrap {
+    padding-top: 4px;
+    margin-top: 4px; }
+  .card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee; }
+  .card-product .title {
+    margin-top: 0; }
+  </style>
+</head>
+<body>
+<br>
+ 
+
+
+<!-- <p style="color:rgb(36, 163, 60)" class="text-center"><a href="/"> <img src="/media/products/logo_rose.png" width="90" height="60"></a>                            <i class="fas fa-users"></i> дружественный полиграфический сервис: <a class="text-muted" class="fas fa-users"></i><i class="fas fa-headset"></i> поддержка, <i class="fas fa-eye"></i> визуализация, <i class="fas fa-calculator"></i> мгновенный расчёт, </i> доставка <i class="fas fa-truck"></i></i></p> -->
+
+  
+
+
+
+
+
+
+
+
+    
+  
+    {% include 'products/navbar.html' %}
+ 
+  
+  <link rel="shortcut icon" href="/media/products/favicon.ico" type="image/x-icon»>
+
+      {% if messages %}
+      <div class="messages container mt-2">
+          {% for message in messages %}
+          <div {% if message.tags %} class="alert alert-{{ message.tags }}{% endif %}" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          </div>
+          {% endfor %}
+      </div>
+    {% endif %}
+  {% block content %}
+  {% endblock %}
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  {% block javascript %}
+  {% endblock javascript %}
+</body>
+</body>
+</html>  
+
+
+<hr  width="100%" size="17" color="	#808080" />
+
+
+
+
+<br>
+
+
+<!--
+
+<p style="color:rgb(36, 163, 60)" class="text-center" class="text-muted"> <a style="color:rgb(36, 163, 60)"href="mailto:info@005.ru"><i class="fa fa-envelope" aria-hidden="true"></i>info@005.ru </a>
+
+  <a href="/">
+ 
+      <img src="/media/products/logo_rose.png" width="97" height="65">
+ 
+  </a>
+
+<i class="fa fa-phone"></i>      +7(495) 740-38-93</p></h6></span>  
+   
+-->
+
+<p class="text-center">copyright © 2021 . all rights reserved.</p>
+
+{% endblock %}
+
+

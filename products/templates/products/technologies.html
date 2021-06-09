@@ -1,0 +1,306 @@
+
+    
+    {% extends 'products/base.html' %}
+    {% load thumbnail %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+    {% load static %}
+
+
+    <h2 class="text-center"></h2>
+
+
+     <br>
+
+    <H1 class="text-center"  >Технологии</H1>
+    <br>
+   
+    <style>
+      a:link {
+       color: #00d0d0; /* Цвет ссылок */
+      }
+      a:visited {
+      
+        color:	#808080; /* Цвет посещенных ссылок */
+      }
+      a:active {
+       color: #f00; /* Цвет активной ссылки */ 
+      }
+   
+     
+       ul#menu li {
+          color: green;
+          display:inline;
+      }
+      
+      </style>
+  
+  <ul id="menu">
+      
+        
+            <li><a href="/products_by_category/2/">блокноты</a></li>
+            <li><a href="/products_by_category/16/">визитные карточки</a></li>
+            <li><a href="/products_by_category/10/">журналы</a></li>
+            <li><a href="/products_by_category/13/">календари</a></li>
+          <li><a href="/products_by_category/5/">книги</a></li>
+          <li><a href="/products_by_category/21/">конверты</a></li>
+          <li><a href="/products_by_category/1/">коробки</a></li>
+          
+          <li><a href="/products_by_category/11/">листовки</a></li>
+          <li><a href="/products_by_category/18/">наклейки</a></li>
+          
+      <li><a href="/products_by_category/20/">пакеты</a></li>
+          <li><a href="/products_by_category/3/">папки</a></li>
+          <li><a href="/products_by_category/7/">подарки</a></li>
+          
+          <li><a href="/products_by_category/12/">постеры</a></li>
+          <li><a href="/products_by_category/17/">приглашения</a></li>
+  
+    
+          <li><a href="/products_by_category/14/">ролл апы</a></li>
+        <li><a href="/products_by_category/15/">этикетки</a></li>
+      
+  
+      </ul>
+   
+    </nav>
+  
+  
+  
+   <br><br>
+    <div class="row">
+            
+            <br>
+            <br>
+            <br>
+            <br>
+  
+         
+        
+      <!-- <div class="card"> -->
+       <!-- <div class="card-img">
+        <img align="center" src="images/posts/polit.jpg" class="img-fluid">
+       </div> -->
+  
+    {% for product in filter.qs %}
+    
+    <!-- <div class="tile__body list-default__parent"> -->
+   
+    <div class="col-md-3 col-lg-3 col-sm-6">
+    
+  
+        <div class="card">
+         <div class="card-img">
+  
+          <a href="products_by_category/{{ product.id }}">
+            {% thumbnail product.mainimage "300" as im %}
+              <img align="center" src="{{ im.url }}"  class="img-fluid">
+        {% endthumbnail %}
+          </a>
+         </div>
+  
+  
+  
+         
+        <div class="card-body">
+          <H6 STYLE="font-family: 'avenir next rounded std'"></H6>
+           <h5 class="card-title"><a href="products_by_category/{{ product.id }}"><p style="color:rgb(36, 163, 60)">{{ product.name }} ></p></a></h5>
+  
+    
+   <h6 class="card-title"><span class="text-muted"> {{ product.preview_text}}</span></a></h6>
+           <p class="card-text">
+            
+          
+          </p>
+         </div>
+       
+        </div>
+  
+        <br><br>
+    
+    </div>
+      
+    <a href="/">
+     
+        
+      {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <div class="blog">
+    
+  
+   
+     <br>
+
+     <div class="container">
+      <div class="row">
+
+     {% thumbnail  "350" as im %}
+    <img src="/media/products/letterpress.png" width="20%">
+    {% endthumbnail %}
+
+
+    
+      {% thumbnail  "350" as im %}
+      <img src="/media/products/кашировка.png" width="20%">
+      {% endthumbnail %}
+
+  
+
+        {% thumbnail  "350" as im %}
+        <img src="/media/products/offset.png" width="20%">
+        {% endthumbnail %}
+        
+        
+    
+    {% thumbnail  "350" as im %}
+    <img src="/media/products/обечайка.png" width="20%">
+    {% endthumbnail %}
+    
+
+  
+      {% thumbnail  "350" as im %}
+      <img src="/media/products/flexa.png" width="20%">
+      {% endthumbnail %}
+    
+  
+
+        {% thumbnail  "350" as im %}
+        <img src="/media/products/digital.png" width="20%">
+        {% endthumbnail %}
+
+   
+
+
+    {% thumbnail  "350" as im %}
+    <img src="/media/products/screenplay.png" width="20%">
+    {% endthumbnail %}
+
+
+    {% thumbnail  "350" as im %}
+    <img src="/media/products/ wprint.png" width="20%">
+    {% endthumbnail %}
+    
+
+           
+           
+      </div>
+
+   </div>
+
+   <h5 class="text-left"> <p>высокая печать</h5>
+   <h5 class="text-left"> <p>кашировка</h5>
+   <h5 class="text-left"> <p>офсетная печать</h5>
+   <h5 class="text-left"> <p>тиснение фольгой</h5>
+   <h5 class="text-left"> <p>флексопечать</h5>
+   <h5 class="text-left"> <p>цифровая печать</h5>
+   <h5 class="text-left"> <p>шелкография</h5>
+   <h5 class="text-left"> <p>широкоформатная печать</h5>
+  
+      <body>
+     
+
+        {% for product in filter.qs %}
+  
+        <!-- <div class="tile__body list-default__parent"> -->
+       
+        <div class="col-md-3 col-lg-3 col-sm-6">
+        
+      
+            <div class="card">
+             <div class="card-img">
+      
+              <a href="products_by_category/{{ product.id }}">
+                {% thumbnail product.mainimage "300" as im %}
+                  <img align="center" src="{{ im.url }}"  class="img-fluid">
+            {% endthumbnail %}
+              </a>
+             </div>
+      
+      
+      
+             
+            <div class="card-body">
+              <H6 STYLE="font-family: 'avenir next rounded std'"></H6>
+               <h5 class="card-title"><a href="products_by_category/{{ product.id }}"><p style="color:rgb(36, 163, 60)">{{ product.name }} ></p></a></h5>
+      
+        
+       <h6 class="card-title"><span class="text-muted"> {{ product.preview_text}}</span></a></h6>
+               <p class="card-text">
+                
+              
+              </p>
+             </div>
+           
+            </div>
+      
+            <br><br>
+        
+        </div>
+           
+        
+        
+       
+      
+      
+      
+      
+        <a href="/">
+         
+            
+          {% endfor %}
+          
+          <a href="/">
+      
+         <!-- <img src="/media/products/banner.png" width="100%"> -->
+         
+        </a>
+      
+         </div>
+        </div>
+       </div>
+      </div>
+      </div>
+      </div>
+      
+      
+   
+
+   
+     <br>
+      <div class="row">
+
+
+
+       
+        <!-- <div class="card"> -->
+         <!-- <div class="card-img">
+          <img align="center" src="images/posts/polit.jpg" class="img-fluid">
+         </div> -->
+    
+       
+    
+              </div>
+    
+    {% endblock %}
+    
+    
+    
+    
+    
+    
+   

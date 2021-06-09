@@ -1,0 +1,143 @@
+
+ 
+    
+    {% extends 'products/base.html' %}
+    {% load thumbnail %}
+    
+    
+    
+    
+    {% load crispy_forms_tags %}
+    
+    
+    
+    
+    {% block content %}
+
+
+
+
+
+
+                          
+   </div>
+    
+    <h5 class="text-center"><span class="text-muted">
+      
+    <div class="blog">
+    
+   
+ 
+<style>
+
+  a:link {
+   color: #00d0d0; /* Цвет ссылок */
+  }
+  a:visited {
+  
+    color:	#0c6e0c; /* Цвет посещенных ссылок */
+  }
+  a:active {
+   color: #f00; /* Цвет активной ссылки */ 
+  }
+
+ 
+   ul#menu li {
+      color: green;
+      display:inline;
+  }
+  
+  </style>
+
+<ul id="menu">
+  
+  
+    
+        <li><a href="/products_by_category/16/">визитные карточки</a></li>
+        <li><a href="/products_by_category/1/">коробки</a></li>
+        <li><a href="/products_by_category/26/">лента</a></li>
+        <li><a href="/products_by_category/11/">листовки</a></li>
+        <li><a href="/products_by_category/11/">меню</a></li>
+        <li><a href="/products_by_category/14/"> мобильные стенды</a></li>
+        <li><a href="/products_by_category/18/">наклейки</a></li>
+        <li><a href="/products_by_category/20/">пакеты</a></li>
+        <li><a href="/products_by_category/3/">папки</a></li>
+        <li><a href="/products_by_category/12/">постеры</a></li>
+        <li><a href="/products_by_category/29/">плейсметы</a></li> 
+        <li><a href="/products_by_category/17/">приглашения</a></li>
+        <li><a href="/products_by_category/14/">ролл апы</a></li>
+        <li><a href="/products_by_category/27/"> бумажные стаканчики</a></li>
+        <li><a href="/products_by_category/28/">тейблтенты</a></li>
+        <li><a href="/products_by_category/11/">флаеры</a></li>
+        <li><a href="/products_by_category/15/">этикетки</a></li>
+  
+
+  </ul>
+
+</nav>
+
+
+<div class="container">
+  <div class="row padded">
+ 
+ 
+     <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+       <div class="block2">  <div class="col-md-7 "><div class="top-cover center-block"></div><p class="top-name center-block text-center"> 
+      
+        <h5><p 
+        <br><p>•	 Вы  задаете нам вопросы,
+            <p>•	Мы вместе уточняем детали, сразу подбираем решение,
+                <p>•	На нашем сайте находим все интересующие вас полиграфические позиции,
+                    <p>•	Мгновенно определяем тираж, цену и сроки производства.      <br> <br>
+                    </div>
+     </div>
+    </div>
+   
+
+
+     
+
+
+
+
+      
+
+       
+                             {% thumbnail  "350" as im %}
+                    
+                    
+<img src="/media/products/ label.png" width="50%">
+
+
+ 
+<center> <h5><p>•	Считаем </center>
+  {% endthumbnail %}
+
+
+                                                                    
+{% thumbnail  "350" as im %}
+
+
+<img src="/media/products/order.png" width="50%">
+
+{% endthumbnail %} 
+<center> <h5><p>•	Добавляем  в счет </center>
+
+  <h5><p style="color:rgb(229, 152, 147)">Мы вместе с вами найдем/разработаем лучшие полиграфические решения для вашего ресторана или кафе, а после полностью автоматизируем процесс  повторного заказа, при лучшем соотношении цена/качество</p></h4>
+
+</div></div>
+<div>
+  <p style="color:rgb(36, 163, 60)"  class="text-center" class="text-muted"><br> <br><a style="color:rgb(36, 163, 60)"  href="mailto:info@005.ru"><i class="fa fa-envelope" aria-hidden="true"></i>info@005.ru </a> 
+    
+    <a href="/">
+   
+        <img src="/media/products/logo_rose.png" width="97" height="65">
+   
+    </a>
+  <i class="fa fa-phone"></i>      +7(495) 740-38-93</p></h6></span>  
+  
+      </div>
+<div>
+    
+    {% endblock %}
+  

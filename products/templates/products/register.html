@@ -1,0 +1,124 @@
+
+{% extends 'products/base.html' %}
+
+
+{% load i18n %}
+
+{% block head_links %} 
+
+<title>The Test</title>
+
+{% endblock %}
+
+{% block head_title %}{% trans "Sign In" %} {% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+ {% block messages %}
+    {% if messages %}
+    <div>
+        <ul>
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+  {% endblock %}
+
+<br><br><br>
+
+<form class="container-fluid text-center" id="login_form" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  
+  {{ form.as_p }}
+
+  {% if redirect_field_value %}
+  
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  
+  {% endif %}
+  
+  <button  class="btn btn-outline-primary " type="submit">{% trans "Войти" %}</button>
+  <a  class="btn btn-outline-dark" href="{% url 'account_reset_password' %}">{% trans "Забыли пароль ?" %}</a>  
+
+</form>
+
+
+<form class="container-fluid text-center" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+
+  {{ form.as_p }}
+
+  {% if redirect_field_value %}
+
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  
+  {% endif %}
+  
+  <button class="btn btn-outline-primary btn-lg" type="submit">{% trans "Зарегистрироваться" %}</button>
+</form>
+<form method="POST" action="{% url 'account_change_password' %}" class="container-fluid text-center" id="change_password_form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-outline-info" type="submit" name="action">{% trans "Поменять Пароль" %}</button>
+</form>
+
+<form class="container-fluid text-center" id="logout_form" method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+
+  {% if redirect_field_value %}
+
+  	<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+
+  {% endif %}
+  
+  <button  class="btn btn-outline-success" type="submit">{% trans 'Выйти из системы' %}</button>
+  <a class="btn btn-outline-danger" id="custom_logout_no" href="https://www.005.ru/">{% trans 'На главную' %}</a>
+</form>
+
+</div>
+
+</div>
+
+
+    <div class="container-fluid">
+
+
+    
+    {% if user.is_authenticated %}
+    	{% include "account/snippets/already_logged_in.html" %}
+    	{% block content_extra %} {% endblock %}
+     {% else %}
+     
+      <!--
+        <p class="forgot_password_info">We have sent you an e-mail. Please contact us if you do not receive it within a few minutes. <br> You will be redirected to <a href="/accounts/login">Sign In</a> page in 5 seconds.</p>
+       
+   		 <script>
+   		 	setTimeout("location.href = '{% url 'account_login' %}';",5000);
+    </script>
+    -->
+   	{% endif %}
+   </div>
+
+
+    {% load account socialaccount %}
+
+    {% get_providers as socialaccount_providers %}
+    <ul class="social_providers_list">
+    {% for provider in socialaccount_providers %}
+        <a title="{{provider.name}}" class="btn btn-outline-dark" 
+         href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><i class="fa fa-{{provider.name}}" id="social_icon"></i>{{provider.name}}</a>
+    {% endfor %}
+     </ul>
+
+
+<br>
+{% endblock %}
+

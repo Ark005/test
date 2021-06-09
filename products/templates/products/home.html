@@ -1,0 +1,315 @@
+
+
+
+
+{% extends 'products/base.html' %}
+{% load thumbnail %}
+
+{% load static %}
+
+
+
+{% load crispy_forms_tags %}
+<div class="col-md-">
+  <span class="icon"><i class="fa fa-search"></i></span>
+  <form method="get">
+    {{ filter.form| crispy }}
+ 
+</div> 
+
+
+{% block content %}
+
+
+{% thumbnail  "350" as im %}
+<img align="center" src="{{ im.url }}"  width="70%" class="img-fluid">
+<img src="/media/products/банер2.jpg" width="100%">
+{% endthumbnail %}
+
+
+
+<style>
+  .outer {
+
+  }
+  .inner {
+    width: 1200px;
+    margin: auto;
+  }
+</style>
+
+<br><br><br><br><br>
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-9">
+   
+        <form method="get">
+          {{ filter.form| crispy }}
+    </div>
+    <div class="col-sm">
+      <button type= "submit"
+      
+        type="button" class="btn btn-success">Искать</button>
+
+      </button>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<!--
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="28" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+  <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+  <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+</svg>
+-->
+
+<div class="container">
+  <div class="row">
+
+ <a data-role="button" data-inline="true" href="support.html"> 
+      <div class="col-sm">
+        <h5 style="color:rgb(0, 0, 0)" class="card-title"><i class="fa fa-headset" ></i></h5></span>
+        <h5  style="color:rgb(36, 163, 60)" class="card-title">поддержка </h5></span>
+        <h7 class="card-title"><span class="text-muted"> консультации при <br> <i class="fas fa-shopping-cart"></i> онлайн заказе</h7></span>
+      </a>
+      </div>
+  
+
+  <a data-role="button" data-inline="true" href="quality.html"> 
+      <div class="col-sm">
+        <h5 style="color:rgb(0, 0, 0)" class="card-title"><i class="fas fa-star"></i></h5></span>
+        <h5  style="color:rgb(36, 163, 60)"  class="card-title"> высокое качество</h5></span>   
+        <h7 class="card-title"><span class="text-muted">контроль качества<br> на всех этапах  </h7></span> 
+      </a> 
+    </div>
+
+
+   
+
+ 
+   
+
+   <a data-role="button" data-inline="true" href="calc.html"> 
+      <div class="col-sm">
+      <h5 style="color:rgb(0, 0, 0)" class="card-title"> <i class="fas fa-calculator"></i> 
+      <h5  style="color:rgb(36, 163, 60)" class="card-title">  мгновенный расчёт</h5></span>   
+      <h7 class="card-title"><span class="text-muted">очень простой калькулятор расчёта  в 2 клика  </h7></span>
+      </a>
+    </div>
+   
+  
+
+  <!--
+    <a data-role="button" data-inline="true" href="technologies.html"> 
+    <div class="col-sm">
+    <h5 style="color:rgb(0, 0, 0)" class="card-title"><span><i class="fas fa-fill-drip"></i></h5></span>
+    <h5  style="color:rgb(36, 163, 60)"  class="card-title">технологии </h5></span>
+    <h7 class="card-title"><span class="text-muted"> помощь,рекомендации </h7></span>
+    </a>
+    </div>
+
+-->
+    
+
+    <a data-role="button" data-inline="true" href="rest.html"> 
+      <div class="col-sm">
+        <h5 style="color:rgb(0, 0, 0)" class="card-title"><i class="fas fa-utensils"></i></h5></span>
+        <h5  style="color:rgb(36, 163, 60)" class="card-title">для ресторанов</h5></span>
+        <h7 class="card-title"><span class="text-muted"> специальное предложение  <br></h7></span>
+      </a>
+      </div>
+
+       <a data-role="button" data-inline="true" href="delivery.html"> 
+        <div class="col-sm">
+          <h5 style="color:rgb(0, 0, 0)" class="card-title"><i class="fa fa-truck" ></i></h5></span>
+          <h5  style="color:rgb(36, 163, 60)" class="card-title">доставка</h5></span>
+          <h7 class="card-title"><span class="text-muted"> доставка  <br> <i class="fas fa-shopping-cart"></i> заказа</h7></span>
+        </a>
+        </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<!--
+<a data-role="button" data-inline="true" href="gmail.html">
+  Poczta Gmail
+  </a>
+
+-->
+  
+
+          <br>
+          <br>
+          <br>
+        
+        
+       
+
+<div class="blog">
+
+ <div class="container">
+  
+
+  <H2 class="text-center"  >Категории продуктов</H2>
+  <br>
+ 
+  <style>
+    a:link {
+     color: #00d0d0; /* Цвет ссылок */
+    }
+    a:visited {
+    
+      color:	#808080; /* Цвет посещенных ссылок */
+    }
+    a:active {
+     color: #f00; /* Цвет активной ссылки */ 
+    }
+ 
+   
+     ul#menu li {
+        color: green;
+        display:inline;
+    }
+    
+    </style>
+
+<ul id="menu">
+    
+      
+          <li><a href="/products_by_category/2/">блокноты</a></li>
+          <li><a href="/products_by_category/16/">визитные карточки</a></li>
+          <li><a href="/products_by_category/10/">журналы</a></li>
+          <li><a href="/products_by_category/13/">календари</a></li>
+        <li><a href="/products_by_category/5/">книги</a></li>
+        <li><a href="/products_by_category/21/">конверты</a></li>
+        <li><a href="/products_by_category/1/">коробки</a></li>
+        
+        <li><a href="/products_by_category/11/">листовки</a></li>
+        <li><a href="/products_by_category/18/">наклейки</a></li>
+        
+    <li><a href="/products_by_category/20/">пакеты</a></li>
+        <li><a href="/products_by_category/3/">папки</a></li>
+        <li><a href="/products_by_category/7/">подарки</a></li>
+        
+        <li><a href="/products_by_category/12/">постеры</a></li>
+        <li><a href="/products_by_category/17/">приглашения</a></li>
+
+  
+        <li><a href="/products_by_category/14/">ролл апы</a></li>
+      <li><a href="/products_by_category/15/">этикетки</a></li>
+    
+
+
+
+    </ul>
+ 
+  </nav>
+
+
+
+ <br><br>
+  <div class="row">
+          
+          <br>
+          <br>
+          <br>
+          <br>
+
+       
+      
+    <!-- <div class="card"> -->
+     <!-- <div class="card-img">
+      <img align="center" src="images/posts/polit.jpg" class="img-fluid">
+     </div> -->
+
+	{% for product in filter.qs %}
+  
+  <!-- <div class="tile__body list-default__parent"> -->
+ 
+	<div class="col-md-3 col-lg-3 col-sm-6">
+  
+
+	    <div class="card">
+	     <div class="card-img">
+
+        <a href="products_by_category/{{ product.id }}">
+      		{% thumbnail product.mainimage "300" as im %}
+		        <img align="center" src="{{ im.url }}"  class="img-fluid">
+      {% endthumbnail %}
+        </a>
+	     </div>
+
+
+
+       
+	    <div class="card-body">
+        <H6 STYLE="font-family: 'avenir next rounded std'"></H6>
+         <h5 class="card-title"><a href="products_by_category/{{ product.id }}"><p style="color:rgb(36, 163, 60)">{{ product.name }} ></p></a></h5>
+
+  
+ <h6 class="card-title"><span class="text-muted"> {{ product.preview_text}}</span></a></h6>
+         <p class="card-text">
+          
+	      
+	      </p>
+	     </div>
+     
+	    </div>
+
+      <br><br>
+  
+  </div>
+	   
+  
+  
+ 
+
+
+
+
+  <a href="/">
+   
+		  
+    {% endfor %}
+    
+    <a href="/">
+
+   <!-- <img src="/media/products/banner.png" width="100%"> -->
+   
+  </a>
+
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+              
+          </div>
+
+{% endblock %}
+
+
